@@ -63,9 +63,9 @@ git push
 
 ## TODO 0: Understand the Template (no coding)
 
-Before we begin coding, open the `index.html` file. Right click anywhere in the file and press **Open with Live Server** to see what we're starting with. It looks like the beginning of bouncing box, right?
+Before we begin coding, open the `index.html` file and press **Preview** to see what we're starting with. It looks like the beginning of bouncing box, right?
 
-<img src="img/live-server.png">
+<img src="img/preview-index.png">
 
 Take 10 minutes to look at the code in each of the three files to get a sense of how this template is laid out. 
 
@@ -143,7 +143,11 @@ function handleKeyDown(event) {
 **READ:**
 Save your code and refresh your game. Open the running application in a new window (see below)
 
+<<<<<<< HEAD
 <img src='img/pop-into-new-window.png' height=400>
+=======
+<img src='img/pop-into-window.png' height=400>
+>>>>>>> 80e9762bc7c98527d6110aaeaf284456e9be550d
 
 Open the console, then press keys to make sure that the events are properly being registered.
 
