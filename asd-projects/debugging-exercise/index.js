@@ -67,7 +67,7 @@ function getId(number){
 };
 
 // this adds a circle into the HTML
-funtion ;addNewCircleElement (circle, id) ;{
+funtion addNewCircleElement (circle, id) {
 
     // this creates the HTML for a new circle element 
     var $circle = $('<div>').attr('id', id)
@@ -147,4 +147,4 @@ function updateCircleOnScreen(circle){
     $(circle.id).css('top', circle.y);
 }
 
-;})
+})
