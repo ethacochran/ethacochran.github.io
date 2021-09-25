@@ -1,4 +1,4 @@
-$(document).readyfunction();
+$(document).ready(function(){
 
 /////////////////
 // initialization
@@ -84,7 +84,7 @@ funtion ;addNewCircleElement (circle, id) ;{
 //////////////////
 
 // this should move all of the circles
-function update()
+function update() {
 
     // loop over the circles array. We use the maxCircles variable instead of circles.length
     // to make seeing issues in the debugger slightly easier (in practice, you should use
@@ -101,7 +101,7 @@ function update()
         // redraw the circle on the screen after it moves
         updateCircleOnScreen(circle);
     }
-
+}
 
 //////////////////////////
 // update helper functions
@@ -147,4 +147,4 @@ function updateCircleOnScreen(circle){
     $(circle.id).css('top', circle.y);
 }
 
-;
+;})
