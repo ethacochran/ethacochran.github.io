@@ -12,11 +12,49 @@ function runProgram(){
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   
   // Game Item Objects
-
+  var KEY = {
+    "UP": 38,
+    "LEFT": 37,
+    "DOWN": 40, 
+    "RIGHT": 39
+  }
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('eventType', handleEvent);                           // change 'eventType' to the type of event you want to handle
+  $(document).on('keydown', handleKeyDown);                           // change 'eventType' to the type of event you want to handle
+  $(document).on('keyup', handleKeyUp)
+function handleKeyDown (event) {
+  if (event.which === KEY.DOWN) {
+    speedY = +5
+  }
+  else if (event.which === KEY.UP) {
+    speedY = -5
+  }
+  else if (event.which === KEY.LEFT) {
+    speedX = -5
+  }
+  else if (event.which === KEY.RIGHT) {
+    speedX = +5
+  }
+}
+function handleKeyUp (event) {
+  if (event.which === KEY.DOWN) {
+    speedY = 0;
+  }
+  else if (event.which === KEY.UP) {
+    speedY = 0;
+  }
+  else if (event.which === KEY.LEFT) {
+    speedX = 0;
+  }
+  else if (event.which === KEY.RIGHT) {
+    speedX = 0;
+  }
+}
+var positionX = 0; // the x-coordinate location for the box
+var speedX = 0; // the speed for the box along the x-axis
+var positionY = 0;
+var speedY = 0;
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -27,7 +65,8 @@ function runProgram(){
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
+    repositionGameItem();
+    redrawGameItem();
 
   }
   
@@ -49,6 +88,15 @@ function runProgram(){
 
     // turn off event handlers
     $(document).off();
+  }
+  function repositionGameItem() {
+    positionX += speedX; // update the position of the box along the x-axis
+    positionY += speedY
+
+  }
+  function redrawGameItem() {
+    $("#gameItem").css("left", positionX);    // draw the box in the new location, positionX pixels away from the "left"
+    $('#gameItem').css('top', positionY)
   }
   
 }
