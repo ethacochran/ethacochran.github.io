@@ -7,7 +7,7 @@ $(document).ready(function(){
    
 applyFilterNoBackground(reddify);
 applyFilterNoBackground(decreaseBlue);
-applyFilter(increaseGreenbyBlue
+applyFilter(increaseGreenbyBlue);
     render($display, image);
 });
 
