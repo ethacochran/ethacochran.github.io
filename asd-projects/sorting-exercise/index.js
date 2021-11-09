@@ -17,13 +17,17 @@ The CSS ids you will work with are:
 async function bubbleSort (array) {
     var sorted = false;
     while (sorted === false) {
+        sorted = true;
         for (var i = 0; i <= array.length - 2; i++) {
             if (array[i] > array[i + 1]) {
                 swap(i, i+1, array);
                 updateCounter(bubbleCounter);
                 await sleep();
-
+               ; sorted = false;
             }
+                
+
+            
         }
     }
 }
