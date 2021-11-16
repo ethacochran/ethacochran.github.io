@@ -117,7 +117,7 @@ function moveCircle(circle){
 function bounceCircle(circle){
 
     // this bounces off the left wall
-    if (circle.x < 0 )
+    if (circle.x < 0) {
         circle.x -= circle.speedX;
         circle.speedX *= -1;
     }
@@ -136,7 +136,7 @@ function bounceCircle(circle){
         circle.y -= circle.speedY;
         circle.speedY *= -1;
     }
-
+}
 
 // this redraws the circle's position on the screen
 function updateCircleOnScreen(circle){
