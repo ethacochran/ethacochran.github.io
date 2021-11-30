@@ -6,30 +6,30 @@ What are the conditions when the game begins?
 Where the paddles are and where the ball starts. What the ball's speed is, which direction it goes.
 
 Does the game have an end? If so, what are the conditions for when it ends?
-The game does not seem to have an end.
+The game does have an end. The game ends when the ball gets past a paddle.
 
 What ifs will there be?
-There will be ifs of when the ball hits the paddle and when the ball goes past the paddle.
+There will be ifs of when the ball hits the paddle and when the ball goes past the paddle. Another if could be if the ball reaches one end of the screen add to the score variable.
 
 Visual Game Components:
 What are the visual game components? For example, in Bouncing Box, the game components were the board and the box.
-The visual game components are the paddles, the board, and the ball.
+The visual game components are the paddles, the board, the ball, and the scoreboard.
 
 Which will be static? (the board)
 The board.
 
 Which will be animated? (the box)
-The balls, and the paddles. 
+The balls, the paddles, and the score.
+
 What data will you need to manage each game component? For example, in Bouncing Box, the data values were positionX, speedX, and points.
-You need speed for the balls and paddles, and define keys to move the paddles. 
+You need speed for the balls and paddles, and define keys to move the paddles. You need to define a variable for the score.
 
 Events / Logic
 What events will occur in this game? (timer events, keyboard events, clicking events?)
-Keyboard events will happen, specifically pressing keys to move the paddles. Another event that could happen is a scoring event when the ball reaches one side of the screen.
+Another event that could happen is a scoring event when the ball reaches one side of the screen.Keyboard events will happen, specifically pressing keys to move the paddles. 
 
 How do those events affect the data of the program?
-They make the data compile over time.
+The data compiles over time letting you see what has happened over the course of the game.
 
 For each "event", write out the high-level logic of what will happen. It is better (and tricky) to be as specific as you can while remaining high-level!
-For keyboard event you would press a key to move the paddle to hit the ball to the other side.
-For the scoring event, once the ball reaches the edge of one side of the screen you would increase a varibale by one.
+For keyboard event you would press the up arrow to move the paddle up and the down arrow to move the paddle down. When the ball hits the paddle you would change the speed of the ball negatively. (Making it positive if it was previously negative and negative if the opposite was true.)
