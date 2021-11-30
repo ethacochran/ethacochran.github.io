@@ -1,0 +1,35 @@
+User Story / Gameplay
+Describe the gameplay
+A ball is being hit back and forth between two paddles.
+
+What are the conditions when the game begins?
+Where the paddles are and where the ball starts. What the ball's speed is, which direction it goes.
+
+Does the game have an end? If so, what are the conditions for when it ends?
+The game does not seem to have an end.
+
+What ifs will there be?
+There will be ifs of when the ball hits the paddle and when the ball goes past the paddle.
+
+Visual Game Components:
+What are the visual game components? For example, in Bouncing Box, the game components were the board and the box.
+The visual game components are the paddles, the board, and the ball.
+
+Which will be static? (the board)
+The board.
+
+Which will be animated? (the box)
+The balls, and the paddles. 
+What data will you need to manage each game component? For example, in Bouncing Box, the data values were positionX, speedX, and points.
+You need speed for the balls and paddles, and define keys to move the paddles. 
+
+Events / Logic
+What events will occur in this game? (timer events, keyboard events, clicking events?)
+Keyboard events will happen, specifically pressing keys to move the paddles. Another event that could happen is a scoring event when the ball reaches one side of the screen.
+
+How do those events affect the data of the program?
+They make the data compile over time.
+
+For each "event", write out the high-level logic of what will happen. It is better (and tricky) to be as specific as you can while remaining high-level!
+For keyboard event you would press a key to move the paddle to hit the ball to the other side.
+For the scoring event, once the ball reaches the edge of one side of the screen you would increase a varibale by one.
