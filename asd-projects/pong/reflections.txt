@@ -3,13 +3,13 @@ Describe the gameplay
 A ball is being hit back and forth between two paddles.
 
 What are the conditions when the game begins?
-Where the paddles are and where the ball starts. What the ball's speed is, which direction it goes.
+Where the paddles are and where the ball starts. What the ball's speed is, which direction it goes. Set the score to zero.
 
 Does the game have an end? If so, what are the conditions for when it ends?
 The game does have an end. The game ends when the ball gets past a paddle.
 
 What ifs will there be?
-There will be ifs of when the ball hits the paddle and when the ball goes past the paddle. Another if could be if the ball reaches one end of the screen add to the score variable.
+There will be ifs of when the ball hits the paddle and when the ball goes past the paddle. Another if could be if the ball reaches one end of the screen add to the first score variable or the second score variable.
 
 Visual Game Components:
 What are the visual game components? For example, in Bouncing Box, the game components were the board and the box.
@@ -32,4 +32,5 @@ How do those events affect the data of the program?
 The data compiles over time letting you see what has happened over the course of the game.
 
 For each "event", write out the high-level logic of what will happen. It is better (and tricky) to be as specific as you can while remaining high-level!
-For keyboard event you would press the up arrow to move the paddle up and the down arrow to move the paddle down. When the ball hits the paddle you would change the speed of the ball negatively. (Making it positive if it was previously negative and negative if the opposite was true.)
+For keyboard event you would press the up arrow to move the paddle up and t
+he down arrow to move the paddle down. If you are not using an AI for the second paddle then you can use W and S to move the paddle up and down, respectively.  When the ball hits the paddle you would change the speed of the ball negatively.  (Making it positive if it was previously negative and negative if the opposite was true.)
