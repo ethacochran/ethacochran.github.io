@@ -30,8 +30,11 @@ var paddleRight = gameItemMaker('#paddleRight')
 var ball = gameItemMaker('#ball')
   // one-time setup
   let interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('eventType', handleEvent);                           // change 'eventType' to the type of event you want to handle
+                         // change 'eventType' to the type of event you want to handle
 
+  $(document).on('keydown', handleKeyDown)
+  $(document).on('keyup', handleKeyUp)
+  startBall();
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -48,27 +51,30 @@ var ball = gameItemMaker('#ball')
   /* 
   Called in response to events.
   */
-  function handleEvent(event) {
-    $(document).on('keydown', moveDown)
-    function moveDown () {
-      if (event.which === KeyboardEvent.keydown ) {
-        gameItem.speedY = -5
-      }
-    }
-    $(document).on('keyup', moveUp)
-    function moveUp () {
-      if (event.which === KeyboardEvent.keyup) {
-        gameItem.speedX = +5
-      }
-    }
+  function handleKeyDown (event) {}
+  function handleKeyUp (event) {}
+  
+   
+    
     //Add handler function to move up (moveUp should be name of function)
-  }
+
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
+  function moveObject (obj) {
+    obj.x = obj.speedX
+    obj.y = obj.speedY
+    $(obj).css('left', obj.x)
+    $(obj).css('top', obj.y)
+  }
+  function startBall () {
+    ball.x = 0
+    ball.y = 0
+    ball.speedX = randomNum = (Math.random() * 3 + 2) * (Math.random() > 0.5 ? -1 : 1);
+    ball.speedY = randomNum = (Math.random() * 3 + 2) * (Math.random() > 0.5 ? -1 : 1);
+  }
 
-  
   function endGame() {
     // stop the interval timer
     clearInterval(interval);
