@@ -65,8 +65,8 @@ var ball = gameItemMaker('#ball')
   function moveObject (obj) {
     obj.x = obj.speedX
     obj.y = obj.speedY
-    $(obj).css('left', obj.x)
-    $(obj).css('top', obj.y)
+    $(obj.id).css('left', obj.x)
+    $(obj.id).css('top', obj.y)
   }
   function startBall () {
     ball.x = 0
