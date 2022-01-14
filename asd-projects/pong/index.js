@@ -56,16 +56,16 @@ var ball = gameItemMaker('#ball')
   function handleKeyDown (event) {
     var keycode = event.which
     if (keycode === KEYCODE.keyW) {
-      paddleRight.speedY = +5
-    }
-    if (keycode === KEYCODE.keyS) {
       paddleRight.speedY = -5
     }
+    if (keycode === KEYCODE.keyS) {
+      paddleRight.speedY = +5
+    }
     if (keycode === KEYCODE.UpArrow) {
-      paddleLeft.speedY = +5
+      paddleLeft.speedY = -5
     }
     if (keycode === KEYCODE.DownArrow) {
-      paddleLeft.speedY = -5
+      paddleLeft.speedY = +5
     }
   }
   function handleKeyUp (event) {
