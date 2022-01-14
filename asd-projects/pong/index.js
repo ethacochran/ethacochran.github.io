@@ -104,8 +104,6 @@ var ball = gameItemMaker('#ball')
     $(obj.id).css('top', obj.y)
   }
   function startBall () {
-    ball.x = 0
-    ball.y = 0
     ball.speedX = (Math.random() * 3 + 2) * (Math.random() > 0.5 ? -1 : 1);
     ball.speedY = (Math.random() * 3 + 2) * (Math.random() > 0.5 ? -1 : 1);
   }
