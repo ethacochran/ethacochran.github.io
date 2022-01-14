@@ -98,8 +98,8 @@ var ball = gameItemMaker('#ball')
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
   function moveObject (obj) {
-    obj.x = obj.speedX
-    obj.y = obj.speedY
+    obj.x = obj.x + obj.speedX
+    obj.y = obj.y + obj.speedY
     $(obj.id).css('left', obj.x)
     $(obj.id).css('top', obj.y)
   }
