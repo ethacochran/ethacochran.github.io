@@ -10,7 +10,8 @@ function runProgram(){
   // Constant Variables
   const FRAME_RATE = 60;
   const FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
-  
+  const BOARD_WIDTH = $("#board").width();
+  const BOARDHEIGHT = $("#board").height();
   // Game Item Objects
   function gameItemMaker (elementId) {
     var gameItem = {}
@@ -47,7 +48,9 @@ var ball = gameItemMaker('#ball')
     moveObject(paddleLeft);
     moveObject(paddleRight);
     moveObject(ball);
-
+    wallCollision(paddleLeft);
+    wallCollision(paddleRight);
+    wallCollision(ball);
   }
   
   /* 
@@ -107,6 +110,24 @@ var ball = gameItemMaker('#ball')
     ball.speedX = (Math.random() * 3 + 2) * (Math.random() > 0.5 ? -1 : 1);
     ball.speedY = (Math.random() * 3 + 2) * (Math.random() > 0.5 ? -1 : 1);
   }
+function wallCollision (object) {
+  if (object.x + object.width > BOARD_WIDTH) {
+    object.speedX = object.speedX * -1
+
+  }
+  if (object.y + object.height > BOARDHEIGHT) {
+    object.speedY = object.speedY * -1
+
+  }
+  if (object.x < 0) {
+    object.speedX = object.speedX * -1
+
+  }
+  if (object.y < 0) {
+    object.speedY = object.speedY * -1
+  }
+
+}
 
   function endGame() {
     // stop the interval timer
