@@ -51,11 +51,44 @@ var ball = gameItemMaker('#ball')
   /* 
   Called in response to events.
   */
-  function handleKeyDown (event) {}
-  function handleKeyUp (event) {}
+  function handleKeyDown (event) {
+    var keycode = event.which
+    if (keycode === KEYCODE.keyW) {
+      paddleRight.speedY = +5
+    }
+    if (keycode === KEYCODE.keyS) {
+      paddleRight.speedY = -5
+    }
+    if (keycode === KEYCODE.UpArrow) {
+      paddleLeft.speedY = +5
+    }
+    if (keycode === KEYCODE.DownArrow) {
+      paddleLeft.speedY = -5
+    }
+  }
+  function handleKeyUp (event) {
+    var keycode = event.which
+    if (keycode === KEYCODE.keyW) {
+      paddleRight.speedY = 0
+    }
+    if (keycode === KEYCODE.keyS) {
+      paddleRight.speedY = 0
+    }
+    if (keycode === KEYCODE.UpArrow) {
+      paddleLeft.speedY = 0
+    }
+    if (keycode === KEYCODE.DownArrow) {
+      paddleLeft.speedY = 0
+    }
+  }
   
    
-    
+    var KEYCODE = {
+      keyW: 87,
+      keyS: 83,
+      UpArrow: 38,
+      DownArrow: 40
+    }
     //Add handler function to move up (moveUp should be name of function)
 
 
