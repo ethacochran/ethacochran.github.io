@@ -44,7 +44,9 @@ var ball = gameItemMaker('#ball')
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
+    moveObject(paddleLeft);
+    moveObject(paddleRight);
+    moveObject(ball);
 
   }
   

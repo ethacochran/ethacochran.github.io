@@ -23,6 +23,8 @@ body {
   background-color: thistle;
   width: 20px;
   height: 80px;
+  left: 20px;
+  top: 30px;
   position: absolute
 }
 
@@ -30,6 +32,8 @@ body {
   background-color: white;
   width: 20px;
   height: 80px;
+  left: 400px;
+  top: 30px;
   position: absolute
 }
 
@@ -37,4 +41,6 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 10px;
+  top: 220;
+  left: 220;
 }
