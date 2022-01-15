@@ -125,11 +125,11 @@ var updatedScore2 = 0;
   }
 function wallCollision (object) {
   if (object.x + object.width > BOARD_WIDTH) {
-    object.speedX = object.speedX * -1
+    object.speedX = object.speedX * -1 
 
   }
   if (object.y + object.height > BOARDHEIGHT) {
-    object.speedY = object.speedY * -1
+    object.y = object.y - object.speedY 
 
   }
   if (object.x < 0) {
@@ -137,7 +137,7 @@ function wallCollision (object) {
 
   }
   if (object.y < 0) {
-    object.speedY = object.speedY * -1
+    object.y = object.y - object.speedY
   }
 
 }
