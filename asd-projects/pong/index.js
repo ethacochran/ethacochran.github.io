@@ -63,6 +63,7 @@ var updatedScore2 = 0;
     if (doCollide(paddleRight, ball)) {
       ball.speedX = ball.speedX * -1
     }
+    endGame();
   }
   
   /* 
@@ -162,13 +163,13 @@ function doCollide(sqaure1, sqaure2) {
   // sides of the square1
   sqaure1.leftX = sqaure1.x;
   sqaure1.topY = sqaure1.y;
-  sqaure1.rightX = sqaure1.x + 50;
-  sqaure1.bottomY = sqaure1.y + 50;
+  sqaure1.rightX = sqaure1.x + sqaure1.width;
+  sqaure1.bottomY = sqaure1.y + sqaure1.height;
   // TODO: Do the same for square2
   sqaure2.leftX = sqaure2.x;
   sqaure2.topY = sqaure2.y;
-  sqaure2.rightX = sqaure2.x + 50;
-  sqaure2.bottomY = sqaure2.y + 50;
+  sqaure2.rightX = sqaure2.x + sqaure2.width;
+  sqaure2.bottomY = sqaure2.y + sqaure2.height;
   // TODO: Return true if they are overlapping, false otherwise
 if (sqaure2.leftX < sqaure1.rightX && sqaure2.rightX > sqaure1.leftX && sqaure2.topY < sqaure1.bottomY && sqaure2.bottomY > sqaure1.topY) {
     return true;
@@ -177,10 +178,17 @@ else return false;
 }
   function endGame() {
     // stop the interval timer
-    clearInterval(interval);
+    if (updatedScore >= 15) {
+      clearInterval(interval);
+
+      // turn off event handlers
+      $(document).off();}
+    if (updatedScore2 >= 15) {
+      clearInterval(interval);
 
     // turn off event handlers
     $(document).off();
+    }
   }
   
 }
