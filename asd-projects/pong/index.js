@@ -53,8 +53,8 @@ var updatedScore2 = 0;
     moveObject(paddleLeft);
     moveObject(paddleRight);
     moveObject(ball);
-    wallCollision(paddleLeft);
-    wallCollision(paddleRight);
+    wallCollision2(paddleLeft);
+    wallCollision2(paddleRight);
     wallCollision(ball);
     scoring();
     if (doCollide(paddleLeft, ball)) {
@@ -129,7 +129,7 @@ function wallCollision (object) {
 
   }
   if (object.y + object.height > BOARDHEIGHT) {
-    object.y = object.y - object.speedY 
+    object.speedY = object.speedY * -1
 
   }
   if (object.x < 0) {
@@ -137,9 +137,17 @@ function wallCollision (object) {
 
   }
   if (object.y < 0) {
-    object.y = object.y - object.speedY
+    object.speedY = object.speedY * -1
   }
 
+}
+function wallCollision2 (object) {
+  if (object.y + object.height > BOARDHEIGHT) {
+    object.y = object.y - object.speedY
+}
+  if (object.y < 0) {
+    object.y = object.y - object.speedY
+  }
 }
 function scoring () {
   if (ball.x <= 0) {
