@@ -58,10 +58,10 @@ var updatedScore2 = 0;
     wallCollision(ball);
     scoring();
     if (doCollide(paddleLeft, ball)) {
-      ball.speedX * -1
+      ball.speedX = ball.speedX * -1
     }
     if (doCollide(paddleRight, ball)) {
-      ball.speedX * -1
+      ball.speedX = ball.speedX * -1
     }
   }
   
