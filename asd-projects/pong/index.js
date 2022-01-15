@@ -29,6 +29,7 @@ function runProgram(){
 var paddleLeft = gameItemMaker('#paddleLeft')
 var paddleRight = gameItemMaker('#paddleRight')
 var ball = gameItemMaker('#ball')
+var plyrS1 = gameItemMaker('#plyrS1')
   // one-time setup
   let interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
                          // change 'eventType' to the type of event you want to handle
@@ -51,6 +52,7 @@ var ball = gameItemMaker('#ball')
     wallCollision(paddleLeft);
     wallCollision(paddleRight);
     wallCollision(ball);
+    scoring();
   }
   
   /* 
@@ -127,6 +129,20 @@ function wallCollision (object) {
     object.speedY = object.speedY * -1
   }
 
+}
+function scoring () {
+  var updatedScore = 0
+  if (ball.x = 0) {
+    ball.x = 220;
+    ball.y = 220;
+    $("#plyrS1").text(updatedScore)
+  }
+  if(ball.x = BOARD_WIDTH){
+    $("#scoreId").text(updatedScore)
+    ball.x = 220;
+    ball.y = 220;
+    startBall();
+  }
 }
 
   function endGame() {
