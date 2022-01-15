@@ -12,6 +12,7 @@ function runProgram(){
   const FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   const BOARD_WIDTH = $("#board").width();
   const BOARDHEIGHT = $("#board").height();
+  
   // Game Item Objects
   function gameItemMaker (elementId) {
     var gameItem = {}
@@ -30,6 +31,9 @@ var paddleLeft = gameItemMaker('#paddleLeft')
 var paddleRight = gameItemMaker('#paddleRight')
 var ball = gameItemMaker('#ball')
 var plyrS1 = gameItemMaker('#plyrS1')
+var plyrS2 = gameItemMaker ('#plyrS2')
+var updatedScore = 0;
+var updatedScore2 = 0;
   // one-time setup
   let interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
                          // change 'eventType' to the type of event you want to handle
@@ -53,6 +57,12 @@ var plyrS1 = gameItemMaker('#plyrS1')
     wallCollision(paddleRight);
     wallCollision(ball);
     scoring();
+    if (doCollide(paddleLeft, ball)) {
+      ball.speedX * -1
+    }
+    if (doCollide(paddleRight, ball)) {
+      ball.speedX * -1
+    }
   }
   
   /* 
@@ -131,20 +141,40 @@ function wallCollision (object) {
 
 }
 function scoring () {
-  var updatedScore = 0
-  if (ball.x = 0) {
-    ball.x = 220;
-    ball.y = 220;
-    $("#plyrS1").text(updatedScore)
-  }
-  if(ball.x = BOARD_WIDTH){
-    $("#scoreId").text(updatedScore)
+  if (ball.x <= 0) {
     ball.x = 220;
     ball.y = 220;
     startBall();
+    updatedScore = updatedScore + 1
+    $("#plyrS1").text(updatedScore)
+    
+  }
+  if(ball.x >= 420){
+    ball.x = 220;
+    ball.y = 220;
+    startBall();
+    updatedScore2 = updatedScore2 + 1
+    $("#plyrS2").text(updatedScore2)
   }
 }
-
+function doCollide(sqaure1, sqaure2) {
+  // TODO: calculate and store the remaining
+  // sides of the square1
+  sqaure1.leftX = sqaure1.x;
+  sqaure1.topY = sqaure1.y;
+  sqaure1.rightX = sqaure1.x + 50;
+  sqaure1.bottomY = sqaure1.y + 50;
+  // TODO: Do the same for square2
+  sqaure2.leftX = sqaure2.x;
+  sqaure2.topY = sqaure2.y;
+  sqaure2.rightX = sqaure2.x + 50;
+  sqaure2.bottomY = sqaure2.y + 50;
+  // TODO: Return true if they are overlapping, false otherwise
+if (sqaure2.leftX < sqaure1.rightX && sqaure2.rightX > sqaure1.leftX && sqaure2.topY < sqaure1.bottomY && sqaure2.bottomY > sqaure1.topY) {
+    return true;
+  }
+else return false;
+}
   function endGame() {
     // stop the interval timer
     clearInterval(interval);
